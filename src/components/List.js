@@ -9,24 +9,25 @@ const WrappedListComponent = ({ items }) => {
 
     useEffect(() => {
         setSelectedIndex(null);
-    }, [items, selectedIndex]);
+    }, [items]);
 
     const handleClick = index => {
         setSelectedIndex(index);
     };
 
     return (
-        <ul style={{ textAlign: 'left' , width: '200px', margin: '0 auto'}}>
-            {items.map((item, index) => (
-                <SingleListItem
+        <div>
+            <ul style={{ textAlign: 'left', width: '200px', margin: '0 auto' }}>
+                {items.map((item, index) => (<SingleListItem
                     key={index}
-                    onClickHandler={() => handleClick(index)}
+                    handleClick={handleClick}
                     text={item.text}
                     index={index}
                     isSelected={selectedIndex}
                 />
-            ))}
-        </ul>
+                ))}
+            </ul>
+        </div>
     )
 };
 

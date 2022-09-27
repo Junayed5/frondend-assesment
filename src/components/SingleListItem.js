@@ -4,14 +4,13 @@ import PropTypes from 'prop-types';
 const WrappedSingleListItem = ({
     index,
     isSelected,
-    onClickHandler,
+    handleClick,
     text,
 }) => {
+    // console.log(index, isSelected);
+    // backgroundColor: isSelected ? 'green' : 'red'
     return (
-        <li
-            style={{ backgroundColor: isSelected ? 'green' : 'red' , margin: "10px", padding: '5px'}}
-            onClick={() => onClickHandler(index)}
-        >
+        <li style={{backgroundColor: isSelected ? 'green' : 'red', margin: "10px", padding: '5px'}} onClick={() => handleClick(index)}>
             {text}
         </li>
     );
@@ -20,7 +19,7 @@ const WrappedSingleListItem = ({
 WrappedSingleListItem.propTypes = {
     index: PropTypes.number,
     isSelected: PropTypes.number,
-    onClickHandler: PropTypes.func.isRequired,
+    handleClick: PropTypes.func.isRequired,
     text: PropTypes.string.isRequired,
 };
 

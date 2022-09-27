@@ -4,9 +4,9 @@ import List from './components/List';
 function App() {
 
   const items = [
-    { text: 'Apple'},
-    { text: 'Mango'},
-    { text: 'Banana'},
+    {id: 1, text: 'Apple'},
+    {id: 2, text: 'Mango'},
+    {id: 3, text: 'Banana'},
   ]
 
   return (
